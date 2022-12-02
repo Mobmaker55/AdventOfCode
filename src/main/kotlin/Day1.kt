@@ -5,13 +5,11 @@ fun main(args: Array<String>) {
     //put code to run here
     questionTwo()
 }
-fun questionOne() : MutableList<Long> {
+private fun questionOne() : MutableList<Long> {
     //elf calories
-    val inputStream: InputStream = File("src/main/calories.txt").inputStream()
-    val caloriesIn = mutableListOf<String>()
+    val caloriesIn = readInput("Day1.txt")
     val elfCalorie = mutableListOf<Long>()
 
-    inputStream.bufferedReader().useLines { lines -> lines.forEach { caloriesIn.add(it)} }
     var cals = 0L
     caloriesIn.forEach{ cal ->
         if(cal == "") {
@@ -26,7 +24,7 @@ fun questionOne() : MutableList<Long> {
     return elfCalorie
 }
 
-fun questionTwo() {
+private fun questionTwo() {
     val elfCalorie = questionOne()
     var result = 0L
     for (i in 0..2) {
