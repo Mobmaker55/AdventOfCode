@@ -11,7 +11,7 @@ fun main(args: Array<String>) {
 
 fun readInput(fileName: String) : MutableList<String> {
     val dataIn = mutableListOf<String>()
-    val inputStream: InputStream = File("src/main/$fileName").inputStream()
+    val inputStream: InputStream = File("src/main/resources/$fileName").inputStream()
     inputStream.bufferedReader().useLines { lines -> lines.forEach { dataIn.add(it)} }
     return dataIn
 }
